@@ -129,26 +129,26 @@ void MainWindow::on_xSlider_rangeChanged(int min, int max)
 void MainWindow::on_xSlider_valueChanged(int value)
 {
     //qDebug() << "x: " << ui->xSlider->value();
-    ui->xLabel->setText(QString("Rotation around Y: %1").arg(coneActor->GetOrientation()[0]));
     rotX = ui->xSlider->value();
     coneActor->RotateX(rotX);
     iren->Render();
+    ui->xLabel->setText(QString("Rotation around Y: %1").arg(coneActor->GetOrientation()[0]));
 }
 
 void MainWindow::on_ySlider_valueChanged(int value)
 {
     //qDebug() << "y: " << ui->ySlider->value();
-    ui->yLabel->setText(QString("Rotation around X: %1").arg(coneActor->GetOrientation()[1]));
     rotY = ui->ySlider->value();
     coneActor->RotateY(rotY);
     iren->Render();
+    ui->yLabel->setText(QString("Rotation around X: %1").arg(coneActor->GetOrientation()[1]));
 }
 
 void MainWindow::on_zSlider_valueChanged(int value)
 {
     //qDebug() << "z: " << ui->zSlider->value();
-    ui->zLabel->setText(QString("Rotation around Z: %1").arg(coneActor->GetOrientation()[2]));
     rotZ = ui->zSlider->value();
     coneActor->RotateZ(rotZ);
     iren->Render();
+    ui->zLabel->setText(QString("Rotation around Z: %1").arg(coneActor->GetOrientation()[2]));
 }
