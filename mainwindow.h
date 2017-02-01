@@ -33,6 +33,8 @@ public:
 
     void runVtkWindow();
 
+	void initVTK();
+
 protected:
 	void mouseMoveEvent(QMouseEvent *eventMove);
 

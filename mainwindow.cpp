@@ -33,8 +33,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 	vtkLabel = ui->label;
 	qtLabel = ui->label_2;
-	globalLabel = ui->label_3;
+	globalLabel = ui->label_3;	
+}
 
+void MainWindow::initVTK()
+{
+	//QTimer::singleShot(0, [=]() {
 	vtkSphereSource *sphereSource = vtkSphereSource::New();
 	sphereSource->SetCenter(0.0, 0.0, 0.0);
 	sphereSource->SetRadius(5.0);
@@ -65,6 +69,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	qDebug() << QApplication::screens().at(0)->physicalDotsPerInch();
 	qDebug() << renderWindow->GetDPI();
 	qDebug() << renderWindow->DetectDPI();
+	//});
 }
 
 MainWindow::~MainWindow()

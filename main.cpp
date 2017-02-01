@@ -126,14 +126,14 @@ vtkStandardNewMacro(MouseInteractorStyle6);
 
 
 int main(int argc, char ** argv)
-{
-	//UserEvent();
-	
-	
+{	
 	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);	
 	QApplication a(argc, argv);
 	MainWindow w;
+	
 	w.show();
+	w.initVTK();
+	
 	a.exec();
 }
 
